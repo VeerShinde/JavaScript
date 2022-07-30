@@ -1,0 +1,90 @@
+<!-- how to link js file properly: -->
+<!-- 1st way to link js file -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<!-- so in above example when we link js file in head and html start parsing code line by line, js file will load in html page but further lines after that will not load after loading the js file, html will stop and try to execute js file but because of all html code is not loaded browser will give error, So this is not the correct way to link js file.-->
+
+
+
+<!-- 2nd way to link JS file -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js" async></script>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<!-- This is a another way to link js file, Lets understnd what happen in this way, here html will start parsing the code then he will see js file on line no 34 with async keyword, async mean start loading js file and simaltaneuosly parse the html code and then js file start loading and html code parsing at the same time, but the problem here is when js file will complete loading and html file is not complete with his parsing but browser will give error means when js will loaded html will stop his parsing, so html is not parsed completly but still js will try to execute so it will give error because he doesn't have html complete code, So this is also the wrong method to link js file. -->
+
+
+
+<!-- 3rd way to link JS file -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+<!-- Lets understand this, here html will start parsing his code line by line and then at the end he will saw there is js file here so he will load that file too after completing parsing and loading html and js will ready to execute, so this is the right way to link js file, but not the best way here file taking more time to execute this will work but take more time. So ther another way to link js file-->
+
+
+
+<!-- 4th way to link JS file -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<!-- lets understnd this, here html start parsing his code line by line, and then he will see there is js file in head and it is link using defer keyword, so defer means start loading the js file and simaltanuesly parse html code, and even if js file loaded completly still don't stop parsing the html code, so here what happen js will be loaded and html parsing his file and after html finish with his parsing then js will start executing, because of js file is loaded already the performance of the website will improve, So this is the best way to link JS file.-->
+
+
+<!-- So the difference between async and defer is: async will start loading js file and html parsing together but when js file is loaded html parsing will stop so this can give error while executing because html parsing is incomplete, and in defer html parsing and js loading is happening at same time but when js will loaded still html parsing will continue and when html parsing is done, and its ready to execute then html will see js is already loaded, so this will improve the website performance while executing code. -->

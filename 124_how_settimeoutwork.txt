@@ -1,0 +1,48 @@
+How setTimeout work:-
+
+let's understand this code:
+
+1. console.log("Script start")
+2. setTimeout(() => {
+    console.log("inside settimeout");
+}, 1000);
+3. console.log("script end");
+
+As we know js create gec context to execute code in callstack.
+Then line 1 enter in callstack and get execute.
+Then js see line 2, js dont't know settimeout so he assign settimeout to web browser, and tell him to give me back after 1 sec.
+Then js add 3rd line in callstack and execute, 
+Then eventloop see is callstack empty if yes then add settimeout function in callback queue and check is there anything there in callstack if there he will wait till it execute, otherwise setTimeout added to callstack and get execute.
+
+output:
+Script start
+script end
+inside settimeout 
+
+
+
+2nd code
+1. console.log("script start");
+2. setTimeout(()=>{
+    console.log("inside settimeout");
+}, 0);
+3. for(let i = 0; i < 100; i++){
+    console.log("V");
+};
+4. console.log("Script end");
+
+Gec created in callstack.
+line 1 added in callstack and then executed.
+line 2, setTimeout was assigned to webbrowser and told him to return after 0 milisec, and then js try to execute further code but browser return setTimeout function because 0 milisec is done, at that time setTimeout is added in callback queue and eventloop keep an eye on callstack if callstack is free then he will allow settimeout function to enter callstack and execute, otherwise he need to wait, because other js code get 1st preference.
+Then line 3 get added in callstack and execute "V" 99 times printed.
+line 4 get added in callstack and then execute.
+After that eventloop check is there anything in callstack see is there anthing callstack working on, if nothing then setTimeout function added in callstack and then execute.
+
+output: 
+script start 
+V                  99 times
+Script end
+inside settimeout 
+ 
+
+Note: 1000 milisec is minimum time taken it can also take more time.

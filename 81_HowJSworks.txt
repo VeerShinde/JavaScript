@@ -1,0 +1,20 @@
+How javascript works:-
+
+when we write code in javascript, js first compile a code and then execute.
+1. Compilation ---> error and scoping
+2. Execution ---> In order to execute js code js creates execution context. 1) Creation phase --> memory create(memory creation phase).
+                                                                            2) Line by line code execution
+what does this mean?
+Means javascript 1st see the complete code and then start executing.
+
+The compilation pase is divided in 3 part:-
+Toxenizing/lexing - In toxenizing code gets divide into small small parts.
+Parsing - and using that small parts of code js make AST(abstract syntax tree) AST make some kind of code which can beexecute later, early error checking.
+Code generation - Code execution.
+
+Example for how js complie his code first-
+console.log("Hello world")
+console.log("this")
+var name = ."Veer";           
+
+In this program js will not execute 15th and 16th line he will give error first on line no 17, because js compile the code 1st then start executing.

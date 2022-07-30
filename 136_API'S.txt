@@ -1,0 +1,22 @@
+Basic theory
+
+AJAX - Asyncronous javascript and XML
+
+HTTP Request
+Is a set od web development technique
+using many web technologies on the "client-side"
+to create asyncronous web applications
+
+With ajax, web applications can send and retrieve data from a server asyncronouly(in the background).
+without interfering with the display and behavious of the existing page.
+
+We don't use data in XML format anymore.
+We use json now
+
+
+3 most comman ways to create and send request to server
+1. xmlHTTPRequest (old way of doing)
+2. fetch API (New way of doing)
+3. axios (this is third party library)
+
+
